@@ -1,18 +1,19 @@
-// src/App.jsx
-import { useRoutes } from "react-router-dom";
-import ShowCreators from "./pages/ShowCreators";
-import ViewCreator from "./pages/ViewCreator";
-// import AddCreator from "./pages/AddCreator";
-// import EditCreator from "./pages/EditCreator";
+import CreatorCard from './components/CreatorCard.jsx'
+import Footer from './components/Footer.jsx'
+import Home from './pages/Home.jsx';
 
-export default function App() {
-  let routes = useRoutes([
-    { path: "/", element: <ShowCreators /> },
-    { path: "/view/:id", element: <ViewCreator /> },
-    // { path: "/add", element: <AddCreator /> },
-    // { path: "/edit/:id", element: <EditCreator /> },
-  ]);
+function App() {
 
-  return routes;
+  return(
+    <>
+      <CreatorCard/>
+      <Home/>
+      <Footer />
+    </>
+    
+  );
+
 }
+export default App
+
 
