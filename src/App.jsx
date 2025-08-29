@@ -1,9 +1,9 @@
 import CreatorCard from './components/CreatorCard.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx';
+import Nav from "./components/Nav";
 
 function App() {
-
   return(
     <>
       <CreatorCard/>
