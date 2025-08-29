@@ -15,6 +15,7 @@ const router = createBrowserRouter([
   {path:"/AddCreator",element:<AddCreator />},
   {path:"/ViewCreator",element:<ViewCreator />},
   {path:"/EditCreator",element:<EditCreator />},
+  {path:"/EditCreator/:creatorName",element:<EditCreator />},
   {path:"/ShowCreators",element:<ShowCreators />},
 ]);
 

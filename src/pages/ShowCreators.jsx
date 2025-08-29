@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../client";
+import { Link } from "react-router-dom";
 
 function ShowCreators() {
 
@@ -34,8 +35,17 @@ function ShowCreators() {
             <div>
                 <ul>
                     {all_creators.map((creator)=>(
-                    <li key={creator.name}>{creator.name} | {creator.url} | {creator.description} | <img src={creator.imageURL}></img> <br></br><br></br></li>
+                        <>
+                            <li key={creator.name}>{creator.name} |
+                            <a href={creator.url} target="_blank">{creator.name}'s Channel</a> |
+                            {creator.description}
+                            <br></br>
+                            <img src={creator.imageURL}></img> <br></br></li>
+                            <li><Link to={`/EditCreator/${creator.name}`}>Edit profile</Link></li>
+                        </>
                     ))}
+                    
+
                 </ul>
                 
             </div>

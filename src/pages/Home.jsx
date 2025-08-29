@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 function Home() {
     return (
         <>
-            <body>
-                This is some text in between
-            </body>
+            <ul>
+                <li> <Link to="/ShowCreators">Show Creators</Link> </li>
+                <li> <Link to="/AddCreator">Add a Creator</Link> </li>
+            </ul>
         </>
     );
 }

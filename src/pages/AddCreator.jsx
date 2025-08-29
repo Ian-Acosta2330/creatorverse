@@ -11,22 +11,25 @@ function AddCreator() {
         event.preventDefault();
         const { data, error } = await supabase
             .from('creators')
-            .insert({name: c_name, url: c_url, description: c_desc, imageURL:c_img});
+            .insert({name: c_name, url: c_url, description: c_desc, imageURL:c_img}); //add to table supabase
 
             if (error){
                 console.log(error);
             } else {
                 console.log("Row added!");
             }
+        // clear the text fields
         setName('');
         setDesc('');
         setUrl('');
         setImg('');
     }
 
+    // set up form for adding creator's fields
     return(
         <>
-            <h1>Add Creator</h1>
+        
+            <h1>Add a Creator</h1>
             <form onSubmit={add_creator}>
                 <label>
                     Creator Name:
