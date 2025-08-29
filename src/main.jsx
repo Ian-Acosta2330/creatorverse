@@ -1,15 +1,27 @@
 import "./index.css";
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import AddCreator from "./pages/AddCreator";
+import ViewCreator from "./pages/ViewCreator";
+import EditCreator from "./pages/EditCreator";
+import ShowCreators from "./pages/ShowCreators";
 
-// const router = createBrowserRouter([]);
+//define available routes
+const router = createBrowserRouter([
+  {path:"/",element:<App />},
+  {path:"/AddCreator",element:<AddCreator />},
+  {path:"/ViewCreator",element:<ViewCreator />},
+  {path:"/EditCreator",element:<EditCreator />},
+  {path:"/ShowCreators",element:<ShowCreators />},
+]);
 
+// Routing component done with react router
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <App />
+    <RouterProvider router ={router} />
   </React.StrictMode>
 
 )
