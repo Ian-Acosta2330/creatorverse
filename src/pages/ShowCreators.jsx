@@ -42,6 +42,7 @@ function ShowCreators() {
                             <br></br>
                             <img src={creator.imageURL}></img> <br></br></li>
                             <li><Link to={`/EditCreator/${creator.name}`}>Edit profile</Link></li>
+                            <li><Link to={`/ViewCreator/${creator.name}`}>View profile</Link></li>
                         </>
                     ))}
                     

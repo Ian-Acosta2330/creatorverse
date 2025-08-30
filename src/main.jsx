@@ -13,7 +13,7 @@ import ShowCreators from "./pages/ShowCreators";
 const router = createBrowserRouter([
   {path:"/",element:<App />},
   {path:"/AddCreator",element:<AddCreator />},
-  {path:"/ViewCreator",element:<ViewCreator />},
+  {path:"/ViewCreator/:creatorName",element:<ViewCreator />},
   {path:"/EditCreator",element:<EditCreator />},
   {path:"/EditCreator/:creatorName",element:<EditCreator />},
   {path:"/ShowCreators",element:<ShowCreators />},
