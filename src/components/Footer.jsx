@@ -1,6 +1,8 @@
+import "../index.css"
+
 function Footer() {
     return(
-        <footer>
+        <footer class="footer">
             <p>&copy; {new Date().getFullYear()} CreatorVerse</p>
         </footer>
     );

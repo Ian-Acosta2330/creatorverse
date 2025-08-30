@@ -52,9 +52,7 @@ function ShowCreators() {
                         </>
                     ))}
                     
-
                 </ul>
-                
             </div>
         </>
     );
