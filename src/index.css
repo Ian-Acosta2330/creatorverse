@@ -258,6 +258,15 @@ nav a:hover{
   margin:auto;
 }
 .fieldList button {
-  width: 10vw;
+  color: white;
+  font-size: 1.2em;
+  font-weight:600;
+  width: auto;
   margin: auto;
+  background-color: #747bff;
+}
+
+.container{
+  height: 50vh;
+  overflow-y: auto;
 }

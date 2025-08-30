@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../index.css"
+import ShowCreators from "./ShowCreators";
 
 function Home() {
     return (
@@ -11,6 +12,11 @@ function Home() {
                 <Link to="/AddCreator"><button>Add a Creator</button></Link>
 
             </ul>
+
+            <div className="container">
+                <ShowCreators />
+            </div>
+            
         </>
     );
 }

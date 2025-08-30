@@ -60,7 +60,7 @@ function AddCreator() {
                         <textarea name="c_img" value={c_img} onChange={(event)=>setImg(event.target.value)}/>
                     </label>
                     
-                    <button type="submit">Add A Creator</button>
+                    <button type="submit">Add Creator</button>
                 </div>
             </form>
         </>
