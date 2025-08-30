@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../client";
 import { useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
+import "../index.css"
 
 function AddCreator() {
     const [c_name,setName]=useState("");
@@ -34,8 +36,8 @@ function AddCreator() {
     // set up form for adding creator's fields
     return(
         <>
-        
-            <h1>Add a Creator</h1>
+            <Nav />
+            <h1 className="title">Add a Creator</h1>
             <form onSubmit={add_creator}>
                 <label>
                     Creator Name:

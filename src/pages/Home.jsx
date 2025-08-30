@@ -4,9 +4,12 @@ import "../index.css"
 function Home() {
     return (
         <>
-            <ul>
-                <li> <Link to="/ShowCreators">Show Creators</Link> </li>
-                <li> <Link to="/AddCreator">Add a Creator</Link> </li>
+            <ul class="homeButton">
+
+                <Link to="/ShowCreators"><button>Show Creators</button></Link>
+
+                <Link to="/AddCreator"><button>Add a Creator</button></Link>
+
             </ul>
         </>
     );

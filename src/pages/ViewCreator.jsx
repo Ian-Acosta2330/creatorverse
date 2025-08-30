@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { supabase } from "../client";
 import { Link, useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
+import "../index.css"
 
 function ViewCreator() {
     const { creatorName } = useParams();
@@ -29,35 +31,28 @@ function ViewCreator() {
 
     return(
         <>
-            <h1>View Creator: {creatorName}</h1>
-            <ul>
+        <Nav />
+            <h1 className="title">View Creator: {creatorName}</h1>
+            <div class="cards">
                 {creator_data.map((creator)=> (
-                    <>
-                        <li> {/*For Editing Name*/}
-                            {creator.name}{" "}
+                        <div key={creator.name} className="card">
 
-                        </li> 
+                            <h2 className="cardName">{creator.name}</h2>
 
-                        <li>
-                            {creator.url}{" "}
+                            <a href={creator.url} target="_blank">
+                            {creator.name}'s Channel
+                            </a>
 
-                        </li> 
-
-                        <li>
-                            {creator.description}{" "}
+                            <p>{creator.description}</p>
                             
-                        </li> 
+                            <img src={creator.imageURL}alt={creator.name}></img>            
 
-                        <li>
-                            <img src={creator.imageURL}></img>
-                           
-                        </li>        
-
-                        <li><Link to={`/EditCreator/${creator.name}`}>Edit profile</Link></li>                                                               
-
-                    </>
+                        <div className="links">
+                            <Link to={`/EditCreator/${creator.name}`}>Edit profile</Link>
+                        </div>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </>
     );
 };

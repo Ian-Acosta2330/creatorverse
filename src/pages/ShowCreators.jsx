@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../client";
 import { Link } from "react-router-dom";
-import "../card.css"
+import "../index.css"
+import Nav from "../components/Nav";
 
 function ShowCreators() {
 
@@ -34,25 +35,28 @@ function ShowCreators() {
     }
     return(
         <>
-            <h1>Show Creators</h1>
-            <div class="card">
-                <ul>
-                    {all_creators.map((creator)=>(
-                        <>
-                            <li key={creator.name}>{creator.name}</li> 
-                            <li>
-                            <a href={creator.url} target="_blank">{creator.name}'s Channel</a></li>
-                            <li>
-                            {creator.description}</li>
-                            <br></br>
+            <Nav />
+            <h1 className="title">Show Creators</h1>
+            <div class="cards">
+                {all_creators.map((creator)=>(
+                    <div key={creator.name} className="card">
+                        
+                        <h2 className="cardName">{creator.name}</h2>
+                        
+                        <a href={creator.url} target="_blank">
+                        {creator.name}'s Channel
+                        </a>
 
-                            <img src={creator.imageURL}></img> <br></br>
-                            <li><Link to={`/EditCreator/${creator.name}`}>Edit profile</Link></li>
-                            <li><Link to={`/ViewCreator/${creator.name}`}>View profile</Link></li>
-                        </>
-                    ))}
-                    
-                </ul>
+                        <p>{creator.description}</p>
+                        
+                        <img src={creator.imageURL}alt={creator.name}></img>
+
+                        <div className="links">
+                            <Link to={`/EditCreator/${creator.name}`}>EDIT PROFILE</Link>
+                            <Link to={`/ViewCreator/${creator.name}`}>VIEW PROFILE</Link>
+                        </div>
+                    </div>
+                ))}
             </div>
         </>
     );

@@ -14,39 +14,50 @@
 
 }
 
-a {
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
+} */
 
 .footer {
-  display: flex;
-  margin-bottom: 0;
-  margin-top:100vh;
+  position: fixed;
+  text-align: center;
+  height: 10vh;
+  background-color: #535bf2;
+  flex-direction: column;
+  bottom:0;
+  width:100%;
 }
 
 .titleHome{
-  font-size: 60px;
+  margin-top: 0;
+  top:0;
+  font-size: 6em;
   text-align: center;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.homeButton{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top:20vh;
+  font-size: 3em;
+  
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  text-align: center;
-} */
+.homeButton button{
+  border: 2px solid transparent;
+  background-color: #747bff;
+  transition: border-color 0.75s;
+  color:white;
+  font-weight: 700;
+}
+.homeButton button:hover {
+  border-color: white;
+}
 
 button {
   border-radius: 8px;
@@ -81,7 +92,8 @@ button:focus-visible {
 }
 
 nav {
-  font-size: large;
+  margin-top:10px;
+  font-size: 2em;
   display: flex;
   top: 0;
   text-align: center;
@@ -89,4 +101,66 @@ nav {
   justify-content: space-evenly;
   width: 100%;
 }
+nav a{
+  font-weight: 600;
+  color: #646cff;
+  text-decoration: inherit;
+}
+nav a:hover{
+  color:#535bf2
+}
 
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 1rem;
+    width: 60%;
+    border-radius: 20px;
+    padding: 20px;
+    margin:auto;
+}
+
+.card a {
+  text-decoration: none;
+  color: rgb(45, 45, 186);
+  font-size: 1.8em;
+}
+
+.card a:hover{
+  text-decoration: underline;
+}
+
+.card p {
+  font-weight:200;
+  font-size: 1.2em;
+}
+
+.card .links{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.card .cardName{
+  font-size: 2.5em;
+}
+.card img {
+    display: flex;
+    margin:auto;
+    padding: 20px;
+}
+
+.title {
+  font-size: 6em;
+  display: flex;
+  margin-top:20px;
+  margin-bottom:30px;
+  justify-content: center;
+}

@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { supabase } from "../client";
 import { useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
+import "../index.css"
 
 function EditCreator() {
 
@@ -111,7 +113,8 @@ function EditCreator() {
 
     return(
         <>
-            <h1>Edit Creator: {creatorName}</h1>
+        <Nav />
+            <h1 className="title">Edit Creator: {creatorName}</h1>
             <ul>
                 {creator_data.map((creator)=> (
                     <>
