@@ -14,7 +14,7 @@ function CreatorCard() {
         //     <hr></hr>
         // </header>
         <h1>
-            Tent
+            CreatorVerse
         </h1>
     );
 

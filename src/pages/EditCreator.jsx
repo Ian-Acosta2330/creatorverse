@@ -95,6 +95,20 @@ function EditCreator() {
             }
     }
 
+    async function delete_creator(name){
+        const { error } = await supabase
+            .from('creators')
+            .delete()
+            .eq('name', creator_data[0]?.name)
+
+            if (error){
+                console.log(error);
+            } else {
+                console.log("DELETED CREATOR!!",);
+                navigate("/ShowCreators")
+            }
+    }
+
     return(
         <>
             <h1>Edit Creator: {creatorName}</h1>
@@ -179,7 +193,9 @@ function EditCreator() {
                             ) : (
                                 <button onClick={() => setEditing("imageURL")}>Update Image</button>
                             )}
-                        </li>                                                                          
+                        </li>
+                        
+                        <button onClick={() => delete_creator(creator.name)}>DELETE CREATOR</button>
 
                     </>
                 ))}

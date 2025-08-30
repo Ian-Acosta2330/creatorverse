@@ -28,7 +28,9 @@ function ShowCreators() {
         return <div>Error:{error}</div>;
     }
     
-
+    if (!all_creators) {
+        return <h1>No Creators!</h1>;
+    }
     return(
         <>
             <h1>Show Creators</h1>

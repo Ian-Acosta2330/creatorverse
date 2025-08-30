@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../client";
+import { useNavigate } from "react-router-dom";
 
 function AddCreator() {
     const [c_name,setName]=useState("");
     const [c_desc, setDesc]=useState("");
     const [c_url, setUrl] = useState("");
     const [c_img, setImg]=useState("");
+
+    const navigate = useNavigate();
 
     async function add_creator(event){
         event.preventDefault();
@@ -15,8 +18,11 @@ function AddCreator() {
 
             if (error){
                 console.log(error);
+                alert("Creator already exists!")
+                navigate("/")
             } else {
                 console.log("Row added!");
+                navigate("/")
             }
         // clear the text fields
         setName('');

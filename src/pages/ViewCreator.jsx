@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 function ViewCreator() {
     const { creatorName } = useParams();
     
-
     const navigate = useNavigate();
    
     const [ creator_data, setData ] = useState([]);
