@@ -164,3 +164,73 @@ nav a:hover{
   margin-bottom:30px;
   justify-content: center;
 }
+
+.editCard {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  
+}
+
+.editCard .topEdit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  margin-bottom:3rem;
+  color:red;
+  font-weight:300;
+}
+
+.editCard .topEdit button{
+  width:auto;
+}
+
+.editCard .topEdit .nameCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.editCard .topEdit .urlCard {
+  display: flex;
+  flex-direction: column;
+}
+.editCard .imgCard {
+  font-size: 1.5em;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.editCard .descCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.editCard .descCard button{
+  font-size: 1.5em;
+  width: auto;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.editCard .delButton{
+  font-size:2em;
+}
+
+.editCard .delButton button{
+  margin-top:35px;
+  background-color: darkgrey;
+  color: red;
+  font-weight:600;
+}
+
+.editCard .delButton button:hover {
+  text-decoration: underline;
+}

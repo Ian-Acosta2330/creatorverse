@@ -115,17 +115,59 @@ function EditCreator() {
         <>
         <Nav />
             <h1 className="title">Edit Creator: {creatorName}</h1>
-            <ul>
                 {creator_data.map((creator)=> (
-                    <>
-                        <li> {/*For Editing Name*/}
-                            {creator.name}{" "}
-                            {editField === "name" ?(
-                                <input type="text" name="newName" value={newName} onChange={(e)=>setNewName(e.target.value)}
-                                placeholder={creator.name}
+                    <div class="editCard">
+                        <div className="topEdit">
+                            <div className="nameCard">
+                                {creator.name}{" "}
+                                {editField === "name" ?(
+                                    <input type="text" name="newName" value={newName} onChange={(e)=>setNewName(e.target.value)}
+                                    placeholder={creator.name}
+                                    onKeyDown={(e)=> {
+                                        if(e.key==="Enter"){
+                                            edit_creator_name(newName);
+                                            setEditing("");
+                                        }
+                                        
+                                    }}
+                                    onBlur={()=>setEditing("")}
+                                    autoFocus
+                                    />
+                                ) : (
+                                    <button onClick={() => setEditing("name")}>Update Name</button>
+                                )}
+                            </div>
+                                        
+
+                            <div className="urlCard">
+                                {creator.url}{" "}
+                                {editField === "url" ? (
+                                    <input type="text" name="newURL" value={newURL} onChange={(e)=>setNewURL(e.target.value)}
+                                    placeholder={creator.url}
+                                    onKeyDown={(e)=> {
+                                        if(e.key==="Enter"){
+                                            edit_creator_URL(newURL);
+                                            setEditing("");
+                                        }
+                                        
+                                    }}
+                                    onBlur={()=>setEditing("")}
+                                    autoFocus
+                                    />
+                                ) : (
+                                    <button onClick={() => setEditing("url")}>Update Channel Link</button>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="imgCard">
+                            <img src={creator.imageURL}></img>{" "}
+                            {editField ==="imageURL" ? (
+                                <input type="text" name="newImage" value={newImage} onChange={(e)=>setNewImage(e.target.value)}
+                                placeholder={creator.imageURL}
                                 onKeyDown={(e)=> {
                                     if(e.key==="Enter"){
-                                        edit_creator_name(newName);
+                                        edit_creator_image(newImage);
                                         setEditing("");
                                     }
                                     
@@ -134,31 +176,12 @@ function EditCreator() {
                                 autoFocus
                                 />
                             ) : (
-                                <button onClick={() => setEditing("name")}>Update Name</button>
+                                <button onClick={() => setEditing("imageURL")}>Update Image</button>
                             )}
-                        </li> 
+                        </div>    
 
-                        <li>
-                            {creator.url}{" "}
-                            {editField === "url" ? (
-                                <input type="text" name="newURL" value={newURL} onChange={(e)=>setNewURL(e.target.value)}
-                                placeholder={creator.url}
-                                onKeyDown={(e)=> {
-                                    if(e.key==="Enter"){
-                                        edit_creator_URL(newURL);
-                                        setEditing("");
-                                    }
-                                    
-                                }}
-                                onBlur={()=>setEditing("")}
-                                autoFocus
-                                />
-                            ) : (
-                                <button onClick={() => setEditing("url")}>Update Channel Link</button>
-                            )}
-                        </li> 
 
-                        <li>
+                        <div className="descCard">
                             {creator.description}{" "}
                             {editField ==="description" ? (
                                 <input type="text" name="newDesc" value={newDesc} onChange={(e)=>setNewDesc(e.target.value)}
@@ -176,33 +199,16 @@ function EditCreator() {
                             ) : (
                                 <button onClick={() => setEditing("description")}>Update Description</button>
                             )}
-                        </li> 
+                        </div>
 
-                        <li>
-                            {creator.imageURL}{" "}
-                            {editField ==="imageURL" ? (
-                                <input type="text" name="newImage" value={newImage} onChange={(e)=>setNewImage(e.target.value)}
-                                placeholder={creator.imageURL}
-                                onKeyDown={(e)=> {
-                                    if(e.key==="Enter"){
-                                        edit_creator_image(newImage);
-                                        setEditing("");
-                                    }
-                                    
-                                }}
-                                onBlur={()=>setEditing("")}
-                                autoFocus
-                                />
-                            ) : (
-                                <button onClick={() => setEditing("imageURL")}>Update Image</button>
-                            )}
-                        </li>
+
                         
-                        <button onClick={() => delete_creator(creator.name)}>DELETE CREATOR</button>
+                        <div className="delButton">
+                            <button onClick={() => delete_creator(creator.name)}>DELETE CREATOR</button>
+                        </div>
 
-                    </>
+                    </div>
                 ))}
-            </ul>
         </>
     );
 };
